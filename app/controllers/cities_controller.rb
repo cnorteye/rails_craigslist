@@ -12,6 +12,10 @@ class CitiesController < ApplicationController
   def show
   end
 
+  def show_posts
+		@posts =  @city.posts
+	end
+
   # GET /cities/new
   def new
     @city = City.new
