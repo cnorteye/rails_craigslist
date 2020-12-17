@@ -7,4 +7,11 @@ class User < ApplicationRecord
   belongs_to :city, optional: true
   has_many :posts
 
+  enum role: [:member, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :member
+  end
+  
 end
