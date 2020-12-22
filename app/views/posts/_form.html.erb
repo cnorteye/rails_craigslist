@@ -28,18 +28,11 @@
   <%# </div> %>
 
   <div class="field">
-    <%= form.label :city_id %>
-     <%= select_tag "post[city_id]", options_from_collection_for_select(City.all, "state", "name"), class: "form-control" %>
-    </div>
-
-
-  <div class="field">
     <%= form.label :postal_code %>
     <%= form.number_field :postal_code, class: "form-control" %>
   </div>
-  
 
-  <div class="field">
+ <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, class: "form-control" %>
   </div>
@@ -50,8 +43,12 @@
   </div>
 
   <%= hidden_field_tag 'post[user_id]', current_user.id %>
-  <%= hidden_field_tag 'post[city_id]', current_user.city_id %>
+  
 
+ <div class="field">
+    <%= form.label :section_id %>
+     <%= select_tag "post[city_id]", options_from_collection_for_select(City.all, "id", "name", "state"), class: "form-control" %>
+    </div>
 
   <div class="field">
     <%= form.label :section_id %>
@@ -60,8 +57,9 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= select_tag "post[category_id]", options_from_collection_for_select(Category.all, "id", "name"), class: "form-control" %>
+    <%= select_tag "post[category_id]", [], class: "form-control" %>
   </div>
+
 
   <div class="field">
     <%= form.label :picture %>

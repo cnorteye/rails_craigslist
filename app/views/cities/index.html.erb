@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<h1 class="text-center mb-3">Cities</h1>
 
-<h1>Cities</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>State</th>
+      <th><b>Name</b></th>
+      <th><b>State</b></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,4 +25,5 @@
 
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'New City', new_city_path, class:"btn btn-primary" %>
+</div>

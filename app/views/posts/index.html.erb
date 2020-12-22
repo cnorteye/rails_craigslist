@@ -1,5 +1,7 @@
+
 <div class="container">
   <h1 class="text-center mt-4">Posts</h1>
+
 
   <!--
     <table class="table table=borderless">
@@ -46,11 +48,12 @@
     <% @posts.each do |post| %>
         <div class="card-group">
           <div class="card mb-3">
-            <img src="<%= post.picture %>" class="card-img-top" alt="Card image cap">
+            <img src="<%= post.pictures %>" class="card-img-top" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Title: <%= post.title %></h5>
                 <h6 class="card-text">Price:  <%= post.price %></h6>
                 <h6 class="card-text">Postal code: <%= post.postal_code %></h6>
+                <h6 class="card-text">City: <%= post.city.name %></h6>
                 <h6 class="card-text">Phone number: <%= post.phone_number %></h6>
                 <h6 class="card-text">Description: <%= post.description %></h6>
                 <h6 class="card-text">Active: <%= post.active %></h6>
@@ -67,3 +70,5 @@
   </div>
    <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
 </div>
+
+

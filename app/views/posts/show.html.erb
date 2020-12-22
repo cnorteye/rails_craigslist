@@ -14,15 +14,9 @@
     <%= @post.neighbourhold %>
   </p>
 -->
-
 <p>
   <strong>Postal code:</strong>
   <%= @post.postal_code %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @post.city %>
 </p>
 
 <p>
@@ -36,12 +30,29 @@
 </p>
 
 <%= hidden_field_tag 'post[user_id]', current_user.id %>
-<%= hidden_field_tag 'post[category_id]', current_user.city_id %>
+<%= hidden_field_tag 'post[city_id]', current_user.city_id %>
+<%= hidden_field_tag 'post[category_id]', @post.category_id %>
 
+<!--
+<p>
+  <strong>Category:</strong>
+  <%= @post.category_id %>
+</p>
+-->
+
+<!--
+<p>
+  <strong>User:</strong>
+  <%= @post.user_id %>
+</p>
+-->
+<p>
+  <strong>City:</strong>
+  <%= @post.city.name %>
+</p>
 
 <p>
-<strong>Picture:</strong>
- 	<% @post.picture.each do |image| %>
+	<% @post.pictures.each do |image| %>
   <%= image_tag image %> <br />
 <% end %>
 </p>
