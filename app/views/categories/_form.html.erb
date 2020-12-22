@@ -1,3 +1,4 @@
+<div class="container mt-5">
 <%= form_with(model: category, local: true) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
@@ -10,18 +11,24 @@
       </ul>
     </div>
   <% end %>
-
+<br>
   <div class="field">
+  <b>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+  </b>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
+  <b>
     <%= form.label :section_id %>
-    <%= select_tag "category[section_id]", options_from_collection_for_select(Section.all, "id", "name", category.section ? category.section.id : "") %>
+  </b>
+    <%= select_tag "category[section_id]", options_from_collection_for_select(Section.all, "id", "name", category.section ? category.section.id : ""), class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+<br>
+<div>

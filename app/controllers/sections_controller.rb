@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [:show, :edit, :update, :destroy, :show_categories]
+  before_action :set_section, only: [:show, :edit, :update, :destroy, :show_categories, :show_posts]
   skip_before_action :authenticate_user!, only: [:index]
   skip_before_action :deny_access, only: [:index]
 
@@ -7,6 +7,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.all
+    @posts = Post.all
     @cities = City.all
   end
 
@@ -20,7 +21,11 @@ class SectionsController < ApplicationController
   end
 
   def show_posts
-		render json: @section.categories	
+		render json: @section.posts	
+  end
+  
+  def show_sections
+		render json: @section.sections	
 	end
 
   # GET /sections/new

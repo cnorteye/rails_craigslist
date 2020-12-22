@@ -1,17 +1,15 @@
-<div id="rightbar">
 
-    <ul class="menu collapsible">
-        <li class="expand s">
-            <h5 class="ban hot active">US Cities</h5>
-            <ul class="acitem" style="display: block;">
-                <% @cities.each do |city| %>
-                    <li class="s">
-                        <a href="<%= city_show_posts_path(city.id) %>"><%= city.name %></a>
-                    </li>
-                <% end %>
-            </ul>
-        </li>
-    </ul>
-        
-    
+<div id="rightbar">
+<div class="row">
+<div class="col">
+<div id="ccc" class="col">
+        <h5 class="ban hot active">US Cities</h5>
+        <ul class="acitem" style="display: block;">
+            <% @cities.each do |city| %>
+                <li class="s"><a href="<%= city_show_posts_path(city.id) %>"><%= city.name %></a></li>
+            <% end %>
+        </ul>
+</div>
  </div>
+</div>
+</div>

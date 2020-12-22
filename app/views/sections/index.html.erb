@@ -1,12 +1,19 @@
+
 <div class="container">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<%= render 'leftbar' %>
-</nav>
+  <div class="row">
+    <div class="col">
+     <%= render 'leftbar' %>
+    </div>
+    <div class="col-8">
+     <%= render 'example' %>
+    </div>
+    <div class="col">
+     <%= render 'cities' %>
+    </div>
+  </div>
+  <br>
+</div>
 
-<h1>Sections</h1>
-
-<%= render 'example' %>
-<%= render 'cities' %>
-
+  <div>
 <%= link_to 'New Section', new_section_path %>
 </div>

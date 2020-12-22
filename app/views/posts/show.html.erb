@@ -8,14 +8,21 @@
   <%= @post.price %>
 </p>
 
-<p>
-  <strong>Neighbourhold:</strong>
-  <%= @post.neighbourhold %>
-</p>
+<!--
+  <p>
+    <strong>Neighbourhold:</strong>
+    <%= @post.neighbourhold %>
+  </p>
+-->
 
 <p>
   <strong>Postal code:</strong>
   <%= @post.postal_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @post.city %>
 </p>
 
 <p>
@@ -28,18 +35,13 @@
   <%= @post.phone_number %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+<%= hidden_field_tag 'post[user_id]', current_user.id %>
+<%= hidden_field_tag 'post[category_id]', current_user.city_id %>
+
 
 <p>
-  <strong>Category:</strong>
-  <%= @post.category_id %>
-</p>
-
-<p>
-  <% @post.pictures.each do |picture| %>
+<strong>Picture:</strong>
+ 	<% @post.picture.each do |image| %>
   <%= image_tag image %> <br />
 <% end %>
 </p>

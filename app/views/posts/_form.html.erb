@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -13,32 +14,39 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <%# <div class="field">
     <%= form.label :neighbourhold %>
-    <%= form.text_field :neighbourhold %>
-  </div>
+    <%# <%= form.text_field :neighbourhold, class: "form-control" %>
+  <%# </div> %>
+
+  <div class="field">
+    <%= form.label :city_id %>
+     <%= select_tag "post[city_id]", options_from_collection_for_select(City.all, "state", "name"), class: "form-control" %>
+    </div>
+
 
   <div class="field">
     <%= form.label :postal_code %>
-    <%= form.number_field :postal_code %>
+    <%= form.number_field :postal_code, class: "form-control" %>
   </div>
+  
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+    <%= form.text_field :phone_number, class: "form-control" %>
   </div>
 
   <%= hidden_field_tag 'post[user_id]', current_user.id %>
@@ -47,12 +55,12 @@
 
   <div class="field">
     <%= form.label :section_id %>
-     <%= select_tag "post[section_id]", options_from_collection_for_select(Section.all, "id", "name") %>
+     <%= select_tag "post[section_id]", options_from_collection_for_select(Section.all, "id", "name"), class: "form-control" %>
     </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= select_tag "post[category_id]", options_from_collection_for_select(Category.all, "id", "name") %>
+    <%= select_tag "post[category_id]", options_from_collection_for_select(Category.all, "id", "name"), class: "form-control" %>
   </div>
 
   <div class="field">
@@ -66,6 +74,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<br>
+</div>
