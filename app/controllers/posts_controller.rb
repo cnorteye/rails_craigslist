@@ -72,6 +72,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :price, :postal_code, :description, :phone_number, :user_id, :category_id, :city_id, :pictures, :active)
+      params.require(:post).permit(:title, :price, :postal_code, :description, :phone_number, :user_id, :category_id, :city_id, :active, pictures: [] )
     end
 end

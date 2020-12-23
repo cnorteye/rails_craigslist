@@ -1,18 +1,33 @@
+<%= render 'layouts/navbar' %>
+
 <div class="container">
   <h1 class="text-center mt-4">Posts</h1>
+
   <div class="row mt-4">
+
     <% @posts.each do |post| %>
         <div class="card-group">
           <div class="card mb-3">
-            <img src="<%= post.picture %>" class="card-img-top" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Title: <%= post.title %></h5>
                 <h6 class="card-text">Price:  <%= post.price %></h6>
                 <h6 class="card-text">Postal code: <%= post.postal_code %></h6>
-                <h6 class="card-text">City: <%= post.city.name %></h6>
                 <h6 class="card-text">Phone number: <%= post.phone_number %></h6>
                 <h6 class="card-text">Description: <%= post.description %></h6>
                 <h6 class="card-text">Active: <%= post.active %></h6>
+
+                  <hr>
+                  <br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <% (0...post.pictures.count).each do |picture|%>
+                            <%= image_tag(post.thumbnail(picture))  %>
+                            <% end %>
+                        </div>
+                      </div>
+                    </div>
+
                 <a><%= link_to 'Edit', edit_post_path(post) %></a> |
                 <a><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></a>
               </div>
