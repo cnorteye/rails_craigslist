@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy, :show_posts]
+  skip_before_action :deny_access, only: [:show_posts]
 
   # GET /categories
   # GET /categories.json

@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy, :show_posts]
+  skip_before_action :deny_access, only: [:show_posts]
+
 
   # GET /cities
   # GET /cities.json

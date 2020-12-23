@@ -1,5 +1,6 @@
-<div class="container">
 <%= javascript_pack_tag 'selection.js' %>
+<div class="container">
+
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -45,6 +46,10 @@
 
   <%= hidden_field_tag 'post[user_id]', current_user.id %>
   
+ <div class="field">
+    <%= form.label :city_id %>
+     <%= select_tag "post[city_id]", options_from_collection_for_select(City.all, "id", "name", "state"), class: "form-control" %>
+    </div>
 
 
 
@@ -58,11 +63,7 @@
     <%= select_tag "post[category_id]", [], class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :section_id %>
-     <%= select_tag "post[city_id]", options_from_collection_for_select(City.all, "id", "name", "state"), class: "form-control" %>
-    </div>
-
+ 
   <div class="field">
     <%= form.label :pictures %>
     <%= form.file_field :pictures, multiple: true %>

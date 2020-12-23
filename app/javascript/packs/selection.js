@@ -6,7 +6,7 @@ $(document).ready(function() {
       $.ajax({
               url: "/sections/" + selected_section + "/show_categories"
       }).then(function(data) {
-          for (var i=0; i< data.length; i++){
+          for (var i = 0; i < data.length; i++){
             $("#post_category_id").append($('<option></option>').attr('value', data[i].id).text(data[i].name));
           }
       });
