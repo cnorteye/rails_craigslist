@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy, :show_categories, :show_posts]
   skip_before_action :authenticate_user!, only: [:index]
-  skip_before_action :deny_access, only: [:index, :show_categories]
+  skip_before_action :deny_access, only: [:index, :show_categories, :show_posts]
 
   # GET /sections
   # GET /sections.json

@@ -51,11 +51,11 @@
   <%= @post.city.name %>
 </p>
 
-
+<p>
 <% (0...@post.pictures.count).each do |picture|%>
 <%= image_tag(@post.thumbnail(picture)) %>
 <% end %>
-
+</p>
 <p>
   <strong>Active:</strong>
   <%= @post.active %>

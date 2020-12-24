@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get 'sections/show_categories'
   get 'sections/:id/show_categories', to: 'sections#show_categories', as: 'section_show_categories'
+
+  get 'sections/show_posts'
+  get 'sections/:id/show_posts', to: 'sections#show_posts', as: 'section_show_posts'
   
   get 'categories/show_posts'
   get 'categories/:id/show_posts', to: 'categories#show_posts', as: 'category_show_posts'
