@@ -18,15 +18,15 @@
 
                   <hr>
                   <br>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <% (0...post.pictures.count).each do |picture|%>
-                            <%= image_tag(post.thumbnail(picture))  %>
-                            <% end %>
+                 <div class="container">
+                  <div class="row justify-content-md-center">
+                      <% (0...post.pictures.count).each do |picture| %>
+                        <div class="card-image-bottom"style="width:100px; height:100px">
+                            <%= image_tag(post.pictures[picture], style: 'width:100% ; height:auto' ) %>
                         </div>
-                      </div>
-                    </div>
+                      <% end %>
+                  </div>
+                </div>
 
                 <a><%= link_to 'Edit', edit_post_path(post) %></a> |
                 <a><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></a>

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @cities = City.all
   end
 
   # GET /posts/1
