@@ -32,6 +32,7 @@
 <%= hidden_field_tag 'post[user_id]', current_user.id %>
 <%= hidden_field_tag 'post[city_id]', current_user.city_id %>
 <%= hidden_field_tag 'post[category_id]', @post.category_id %>
+<%= hidden_field_tag 'post[section_id]', @post.section_id %>
 
 <!--
 <p>
@@ -51,18 +52,22 @@
   <%= @post.city.name %>
 </p>
 
-
-
-<p>
-	<% @post.pictures.each do |image| %>
-  <%= image_tag image %> <br />
-<% end %>
-</p>
-
 <p>
   <strong>Active:</strong>
   <%= @post.active %>
 </p>
+
+<p>
+	<% @post.pictures.each do |image| %>
+  <div class="card-image-bottom"style="width:100px; height:100px">
+  <%= image_tag image, style: 'width:100% ; height:auto'  %> 
+   </div>
+  
+<% end %>
+</p>
+
+ <br><br><br><br><br><br>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

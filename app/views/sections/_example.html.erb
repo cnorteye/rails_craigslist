@@ -1,7 +1,7 @@
 <div id="center">
 	<% @sections.each do |section| %>  
 			<div id="ccc" class="col">
-				<h4 class="ban"><a href= "<%= section_show_categories_path(section.id) %>" class="ccc" data-alltitle="all <%= section.name %>" data-cat="ccc"><span class="txt"><%= section.name %><sup class="c"></sup></span></a></h4>
+				<h4 class="ban"><a href= "<%= section_show_posts_path(section.id) %>" class="ccc" data-alltitle="all <%= section.name %>" data-cat="ccc"><span class="txt"><%= section.name %><sup class="c"></sup></span></a></h4>
 				<div class="cats">
 					<ul id="ccc0" class="left">
 						<% section.categories.each do |category| %>
